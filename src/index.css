@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+/* Sin @apply, estilos “normales” */
+body {
+  margin: 0;
+  background-color: #020617; /* equivalente a bg-slate-950 */
+  color: #e5e7eb;            /* un gris clarito */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+}
+
+::selection {
+  background-color: #14b8a6; /* teal-500 aprox */
+  color: #020617;
+}
