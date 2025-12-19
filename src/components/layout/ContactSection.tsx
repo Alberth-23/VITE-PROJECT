@@ -152,7 +152,7 @@ export const ContactSection: React.FC = () => {
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-[#25D366] px-3 py-2 text-xs font-medium text-slate-950 shadow-lg shadow-[#25D366]/40 transition hover:-translate-y-0.5 hover:bg-[#1ebe5d]"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
-                  <span>WhatsApp directo</span>
+                  <span>WhatsApp </span>
                 </a>
               )}
               {siteConfig.social.instagram && (

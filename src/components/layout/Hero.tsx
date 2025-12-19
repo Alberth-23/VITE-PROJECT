@@ -1,14 +1,23 @@
 import { siteConfig } from "../../config/site";
 import { Container } from "../ui/Container";
+import {
+  ReactIcon,
+  TypeScriptIcon,
+  PythonIcon,
+  JavaIcon,
+  DatabaseIcon,
+  LinuxIcon,
+  GitIcon,
+} from "../ui/icons";
 
 export const Hero = () => {
-  // Iniciales a partir del nombre del siteConfig
-  const initials = siteConfig.name
-    .split(" ")
-    .filter(Boolean)
-    .map((w) => w[0]?.toUpperCase())
-    .slice(0, 2)
-    .join("") || "DEV";
+  const initials =
+    siteConfig.name
+      .split(" ")
+      .filter(Boolean)
+      .map((w) => w[0]?.toUpperCase())
+      .slice(0, 2)
+      .join("") || "DEV";
 
   return (
     <section
@@ -102,8 +111,100 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Columna derecha: deja aquí tu card de stack actual */}
-          {/* ... tu código de stack principal ... */}
+          {/* Columna derecha: card de Stack / experiencia */}
+          <div className="relative">
+            <div
+              className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-tr from-teal-500/20 via-sky-500/10 to-transparent blur-2xl"
+              aria-hidden="true"
+            />
+            <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-950 p-6 shadow-xl shadow-teal-500/20">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                Stack principal
+              </p>
+
+              <div className="mt-4 space-y-4 text-sm text-slate-100">
+                {/* Backend */}
+                <div className="rounded-2xl bg-slate-900/70 p-4">
+                  <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                    Backend & APIs
+                  </p>
+                  <p className="mt-1 font-medium">Python · FastAPI · REST</p>
+                  <p className="mt-1 text-xs text-slate-400">
+                    Diseño de APIs limpias, tipadas y listas para producción,
+                    conectadas a bases de datos SQL.
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5 text-[11px]">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2 py-0.5 text-slate-200 ring-1 ring-slate-700/60">
+                      <PythonIcon className="h-3.5 w-3.5" />
+                      <span>Python</span>
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2 py-0.5 text-slate-200 ring-1 ring-slate-700/60">
+                      <DatabaseIcon className="h-3.5 w-3.5" />
+                      <span>FastAPI · REST</span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Frontend / Mobile */}
+                <div className="rounded-2xl bg-slate-900/70 p-4">
+                  <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                    Frontend & Mobile
+                  </p>
+                  <p className="mt-1 font-medium">
+                    React · TypeScript · Java (Android)
+                  </p>
+                  <p className="mt-1 text-xs text-slate-400">
+                    Interfaces modernas, responsivas y orientadas a negocio,
+                    integradas con APIs propias.
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5 text-[11px]">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2 py-0.5 text-slate-200 ring-1 ring-slate-700/60">
+                      <ReactIcon className="h-3.5 w-3.5" />
+                      <span>React</span>
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2 py-0.5 text-slate-200 ring-1 ring-slate-700/60">
+                      <TypeScriptIcon className="h-3.5 w-3.5" />
+                      <span>TypeScript</span>
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2 py-0.5 text-slate-200 ring-1 ring-slate-700/60">
+                      <JavaIcon className="h-3.5 w-3.5" />
+                      <span>Java · Android</span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* DB + herramientas */}
+                <div className="rounded-2xl border border-dashed border-slate-700/80 bg-slate-900/40 p-4 text-xs text-slate-300">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    Datos & entorno
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2 py-0.5 text-[11px] text-slate-200 ring-1 ring-slate-700/60">
+                      <DatabaseIcon className="h-3.5 w-3.5" />
+                      <span>PostgreSQL · MariaDB · SQL</span>
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2 py-0.5 text-[11px] text-slate-200 ring-1 ring-slate-700/60">
+                      <LinuxIcon className="h-3.5 w-3.5" />
+                      <span>Linux (Kali)</span>
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2 py-0.5 text-[11px] text-slate-200 ring-1 ring-slate-700/60">
+                      <GitIcon className="h-3.5 w-3.5" />
+                      <span>Git · GitHub</span>
+                    </span>
+                  </div>
+                  <p className="mt-2 text-[11px] text-slate-400">
+                    Enfoque en buenas prácticas, arquitectura limpia y código
+                    mantenible.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-4 flex items-center justify-between text-[11px] text-slate-400">
+                <span>Stack listo para proyectos reales</span>
+                <span>Full Stack · Mobile · APIs</span>
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
     </section>
