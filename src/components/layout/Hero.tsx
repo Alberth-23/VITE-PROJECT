@@ -2,6 +2,14 @@ import { siteConfig } from "../../config/site";
 import { Container } from "../ui/Container";
 
 export const Hero = () => {
+  // Iniciales a partir del nombre del siteConfig
+  const initials = siteConfig.name
+    .split(" ")
+    .filter(Boolean)
+    .map((w) => w[0]?.toUpperCase())
+    .slice(0, 2)
+    .join("") || "DEV";
+
   return (
     <section
       id="home"
@@ -18,21 +26,36 @@ export const Hero = () => {
 
       <Container className="pt-10 pb-12 sm:pt-16 sm:pb-16 lg:pt-24 lg:pb-24">
         <div className="grid items-center gap-10 md:grid-cols-2">
-          {/* Columna izquierda: texto y CTAs */}
+          {/* Columna izquierda: avatar, texto y CTAs */}
           <div className="space-y-6">
+            {/* Avatar con iniciales */}
+            <div className="flex items-center gap-4">
+              <div className="relative h-16 w-16">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-400 to-cyan-500 opacity-80 blur-sm" />
+                <div className="relative flex h-full w-full items-center justify-center rounded-full bg-slate-950 text-lg font-bold text-slate-950 shadow-lg shadow-teal-500/40">
+                  <span className="rounded-full bg-slate-50/90 px-3 py-1 text-sm tracking-tight text-slate-900">
+                    {initials}
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="text-sm font-semibold text-slate-100">
+                  {siteConfig.name}
+                </span>
+                <span className="text-xs text-slate-400">
+                  {siteConfig.role}
+                </span>
+              </div>
+            </div>
+
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-teal-400">
               {siteConfig.role}
             </p>
 
             <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-              Hola, soy{" "}
-              <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                {siteConfig.name}
-              </span>
-              .
-              <br />
               Desarrollo soluciones{" "}
-              <span className="text-teal-400">web y móviles</span>.
+              <span className="text-teal-400">web y móviles</span> con foco en
+              producto real.
             </h1>
 
             <p className="max-w-xl text-sm text-slate-300 sm:text-base">
@@ -79,8 +102,8 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Columna derecha: tu card de stack (puedes dejar la que ya tenías) */}
-          {/* ... */}
+          {/* Columna derecha: deja aquí tu card de stack actual */}
+          {/* ... tu código de stack principal ... */}
         </div>
       </Container>
     </section>
