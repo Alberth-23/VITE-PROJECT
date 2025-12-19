@@ -76,7 +76,7 @@ export const ContactSection: React.FC = () => {
   return (
     <section
       id="contacto"
-      className="scroll-mt-24 border-t border-slate-800/60 bg-slate-950"
+      className="scroll-mt-24 border-t border-slate-800/70 bg-slate-950"
       aria-label="Formulario de contacto"
     >
       <Container className="py-12 sm:py-16 lg:py-20">
@@ -98,7 +98,7 @@ export const ContactSection: React.FC = () => {
         </div>
 
         <div className="mt-10 grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1.8fr)]">
-          {/* Columna izquierda: info de contacto */}
+          {/* Columna izquierda: info */}
           <div className="space-y-6 text-sm text-slate-300 sm:text-base">
             <div>
               <h3 className="text-sm font-semibold text-slate-100 sm:text-base">
@@ -131,7 +131,7 @@ export const ContactSection: React.FC = () => {
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-300 sm:text-sm">
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-xs text-slate-300 sm:text-sm">
               <p className="font-semibold text-slate-100">
                 ¿Qué tipo de proyectos me interesan?
               </p>
@@ -169,7 +169,7 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Columna derecha: formulario -> redirección a WhatsApp */}
+          {/* Columna derecha: formulario -> WhatsApp */}
           <div>
             <form
               onSubmit={handleSubmit}
@@ -235,7 +235,9 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {errorMessage && (
-                <p className="text-xs font-medium text-rose-400">{errorMessage}</p>
+                <p className="text-xs font-medium text-rose-400">
+                  {errorMessage}
+                </p>
               )}
 
               <div className="flex items-center justify-between gap-3">
@@ -272,6 +274,18 @@ export const ContactSection: React.FC = () => {
                 </p>
               </div>
             </form>
+
+            {/* Texto alternativo en mobile */}
+            <p className="mt-3 text-[11px] text-slate-400 sm:hidden">
+              También puedes escribirme a{" "}
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="text-teal-400 hover:underline"
+              >
+                {siteConfig.email}
+              </a>
+              .
+            </p>
           </div>
         </div>
       </Container>

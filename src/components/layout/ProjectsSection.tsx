@@ -14,14 +14,14 @@ const projects = [
       "Integración con base de datos PostgreSQL.",
       "Interfaz responsive para escritorio y móvil.",
     ],
-    githubUrl: "https://github.com/Alberth-23/web-odontologia",
+    githubUrl: "https://github.com/tu-usuario/sistema-odontologico-web",
   },
   {
     title: "Aplicación móvil para gestión de pacientes",
     type: "Aplicación móvil",
     year: "2024",
     description:
-      "App móvil para que odontólogos y asistentes gestionen pacientes, citas y notificaciones desde el teléfono.",
+      "App móvil para odontólogos y asistentes que permite gestionar pacientes, citas y notificaciones.",
     stack: ["Java / Android", "REST API", "JSON"],
     responsibilities: [
       "Diseño de pantallas y navegación.",
@@ -50,7 +50,7 @@ export const ProjectsSection = () => {
   return (
     <section
       id="proyectos"
-      className="scroll-mt-24 border-t border-slate-800/60 bg-slate-950/95"
+      className="scroll-mt-24 border-t border-slate-800/70 bg-slate-950"
       aria-label="Proyectos destacados"
     >
       <Container className="py-12 sm:py-16 lg:py-20">
@@ -99,7 +99,7 @@ export const ProjectsSection = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs font-medium text-slate-100 shadow-sm transition group-hover:border-teal-400 group-hover:text-teal-300"
+                    className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-700 bg-slate-900/90 px-3 py-1.5 text-xs font-medium text-slate-100 shadow-sm transition group-hover:border-teal-400 group-hover:text-teal-300"
                   >
                     <svg
                       aria-hidden="true"

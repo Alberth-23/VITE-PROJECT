@@ -29,7 +29,7 @@ export const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="scroll-mt-24 border-t border-slate-800/60 bg-slate-950"
+      className="scroll-mt-24 border-t border-slate-800/70 bg-slate-950"
       aria-label="Skills técnicas"
     >
       <Container className="py-12 sm:py-16 lg:py-20">
@@ -53,7 +53,7 @@ export const SkillsSection = () => {
           {skillGroups.map((group) => (
             <div
               key={group.title}
-              className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-4"
+              className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-4"
             >
               <h3 className="text-sm font-semibold text-slate-100">
                 {group.title}
@@ -65,7 +65,7 @@ export const SkillsSection = () => {
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-full bg-slate-950/70 px-2 py-1 text-[11px] font-medium text-slate-200 ring-1 ring-slate-700/60"
+                    className="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 text-[11px] font-medium text-slate-200 ring-1 ring-slate-700/60"
                   >
                     {item}
                   </li>
